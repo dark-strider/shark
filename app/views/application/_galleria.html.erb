@@ -1,0 +1,18 @@
+<div id='galleria'></div>
+
+<% content_for :scripts do %>
+  <script type='text/javascript'>
+    var data = [];
+    <% @photos.each do |photo| %>
+      data.push({
+        thumb: '<%= photo.image_url(:small) %>',
+        image: '<%= photo.image_url(:normal) %>',
+          big: '<%= photo.image_url %>'
+      <% if can?(:destroy, photo) %>
+        ,layer: '<%= link_to 'Delete', photo, method: :delete, confirm: 'Sure..?' %>'
+      <% end %>
+      })
+    <% end %>
+    Galleria.run('#galleria', { dataSource: data });
+  </script>
+<% end %>

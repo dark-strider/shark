@@ -1,0 +1,7 @@
+<%= gmaps(markers: { data: @marker, options: { draggable: true,raw: '{ animation: google.maps.Animation.DROP }' }}, map_options: {  id:'map', container_class: 'map_form_container', class: 'map_form', minZoom: 3,  maxZoom: 18, raw: '{ disableDefaultUI: true, mapTypeControlOptions: { position: google.maps.ControlPosition.BOTTOM_LEFT, style: google.maps.MapTypeControlStyle.DROPDOWN_MENU }, zoomControlOptions: { style: google.maps.ZoomControlStyle.LARGE, position: google.maps.ControlPosition.LEFT_TOP }, panControl: false, panControlOptions: { position: google.maps.ControlPosition.LEFT_TOP } }'}) %>
+
+<% content_for :scripts do %>
+  <script type='text/javascript'>
+    var form = true;
+  </script>
+<% end %>

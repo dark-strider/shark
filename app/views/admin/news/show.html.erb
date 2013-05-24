@@ -1,0 +1,11 @@
+<p>
+  <b>Title:</b>
+  <%= @news.title %>
+</p>
+<p>
+  <b>Content:</b>
+  <%= @news.content %>
+</p>
+
+<%= link_to 'Edit', [:edit, :admin, @news] %> |
+<%= link_to 'Back', [:admin, :news_index] %>

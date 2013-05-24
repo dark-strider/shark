@@ -1,0 +1,11 @@
+<p>
+  <b>Name:</b>
+  <%= @social.name %>
+</p><p>
+  <b>Provider:</b>
+  <%= @social.provider %>
+</p>
+
+
+<%= link_to 'Edit', [:edit, :admin, @social] %> |
+<%= link_to 'Back', [:admin, :socials] %>

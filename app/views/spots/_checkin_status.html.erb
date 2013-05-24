@@ -1,0 +1,25 @@
+<% checkin = Checkin.find_by(user_id: current_user.id, spot_id: @spot.id) %>
+<% unshared = @socials - checkin.socials %>
+
+<% unshared.each do |social| %>
+  <%= social.name %>
+<% end %>
+
+<br>
+<br>
+<%# checkin.socials.each do |social| %>
+  <%#= social.name %>
+<%# end %>
+
+<p>Поделиться:</p>
+
+<%= render 'spots/share/vk' %>
+<%= render 'spots/share/tw' %>
+<%= render 'spots/share/ok' %>
+<%= render 'spots/share/mm' %>
+<%# if ok || mm %>
+  <%= render 'spots/share/mailru_script' %>
+<%# end %>
+<%= render 'spots/share/fb' %>
+<%= render 'spots/share/po' %>
+

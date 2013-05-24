@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Shark</title>
+    <%= stylesheet_link_tag 'application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <% flash.each do |name, msg| %>
+      <%= content_tag :div, msg, :id => "flash_#{name}" %>
+    <% end %>
+
+    <%= link_to 'to Mobile', url_for(v:'m') %>
+    <br>
+    
+    <%= render 'header' %>
+    <%= yield %>
+  </body>
+  
+  <footer>
+    <%= javascript_include_tag 'application' %>
+    <%= yield :scripts %>
+    
+    <!-- Set for maps buttons manage. -->
+    <% if current_user %>
+      <script>var current_user_id = '#{current_user.id}';</script>
+    <% else %>
+      <script>var current_user_id = null;</script>
+    <% end %>
+      
+  </footer>
+</html>

@@ -1,0 +1,25 @@
+<br>
+<br>
+<div>
+  <b>Energetic:</b>
+  <%= @spot.energetic.name %>
+</div>
+<div>
+  <b>Status:</b>
+  <%= @spot.status %>
+</div>
+<div>
+  <b>Code:</b>
+  <%= @spot.code %>
+</div>
+
+<%= render 'uploader' if can?(:create, Photo) %>
+<%= render 'galleria' %>
+
+<%= link_to 'Back', [:root] %>
+<br>
+<br>
+<br>
+
+<%= render 'user_desk' %>
+<%#= render 'users_table' %>

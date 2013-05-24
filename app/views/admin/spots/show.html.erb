@@ -1,0 +1,23 @@
+<p>
+  <b>Energetic:</b>
+  <%= @spot.energetic.name %>
+</p>
+
+<p>
+  <b>Status:</b>
+  <%= @spot.status %>
+</p>
+
+<p>
+  <b>Code:</b>
+  <%= @spot.code %>
+</p>
+
+<%= render 'uploader' %>
+<%= render 'galleria' %>
+
+<br>
+<%= link_to 'Edit', [:edit, :admin, @spot] %> |
+<%= link_to 'Back', [:admin, :spots] %>
+<br>
+<br>

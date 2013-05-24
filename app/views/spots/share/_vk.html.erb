@@ -1,0 +1,21 @@
+<!-- vkontakte -->
+  <script type="text/javascript" src="//vk.com/js/api/openapi.js?79"></script>
+  <div id="vk_like"></div>
+  
+  <script type="text/javascript">
+    VK.init({apiId: 3085930, onlyWidgets: true});
+    VK.Widgets.Like('vk_like', {
+      type: 'button',
+      pageTitle: 'Title',
+      pageDescription: 'Description', 
+      pageImage: 'Image'
+    }, 5);
+  
+    VK.Observer.subscribe('widgets.like.liked',function(){   
+      alert('Теперь расшaрьте друзьям');
+    });
+    VK.Observer.subscribe('widgets.like.shared',function(){   
+      alert('vkontakte. post was published.');
+    });
+  </script>
+<!-- /vkontakte -->

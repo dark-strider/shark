@@ -1,0 +1,27 @@
+<h1>Listing stickers</h1>
+
+<table>
+  <tr>
+    <th>Spot</th>
+    <th>Seller</th>
+    <th>Client</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @stickers.each do |sticker| %>
+  <tr>
+    <td><%= sticker.spot.energetic.name %></td>
+    <td><%= sticker.seller.name %></td>
+    <td><%= sticker.client.name %></td>
+    <td><%= link_to 'Show', [:admin, sticker] %></td>
+    <td><%= link_to 'Edit', [:edit, :admin, sticker] %></td>
+    <td><%= link_to 'Destroy', [:admin, sticker], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New sticker', [:new, :admin, :sticker] %>

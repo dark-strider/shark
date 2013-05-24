@@ -1,0 +1,10 @@
+<%= simple_form_for [:admin, @energetic], html: { multipart: true } do |f| %>
+
+  <%= image_tag @energetic.avatar_url(:normal) if @energetic.avatar? %>
+  <%= f.file_field :avatar %>
+  <%= f.hidden_field :avatar_cache %>
+
+  <%= f.input :name %>
+  <%= f.input :about, as: :text %>
+  <%= f.button :submit %>
+<% end %>

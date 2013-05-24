@@ -1,0 +1,10 @@
+<% users = User.all %>
+<%= simple_form_for [:admin, @sticker] do |f| %>
+  <%= image_tag @sticker.avatar_url(:normal) if @sticker.avatar? %>
+  <%= f.input :avatar, as: :file %>
+  <%= f.hidden_field :avatar_cache %>
+  <%= f.association :spot, collection: Spot.all %>
+  <%= f.association :seller, collection: users %>
+  <%= f.association :client, collection: users %>
+  <%= f.button :submit %>
+<% end %>

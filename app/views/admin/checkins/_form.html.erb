@@ -1,0 +1,6 @@
+<%= simple_form_for [:admin, @checkin] do |f| %>
+  <%= f.association :user, collection: User.all %>
+  <%= f.association :spot, collection: Spot.all %>
+  <%= f.association :socials, collection: Social.all, multiple: true %>
+  <%= f.button :submit %>
+<% end %>

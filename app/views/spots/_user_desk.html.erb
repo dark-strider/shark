@@ -1,0 +1,10 @@
+<% if @spot.checked_by?(current_user) %>
+  <%= render 'checkin_status' %>
+<% elsif current_user %>
+  <%= render 'checkin_form' %>
+<% else %>
+  Вам необходимо
+  <%= link_to 'войти', [:new, :user_session] %> или
+  <%= link_to 'зарегистрироваться', [:new, :user_registration] %>
+  чтобы отметить это место.
+<% end %>

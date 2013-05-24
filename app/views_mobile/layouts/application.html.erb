@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mobile</title>
+    <meta http-equiv='Content-type' content='text/html; charset=utf-8'>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <!-- <meta name='viewport' content='width=device-width, initial-scale=1, minimum-scale=1, maximum-scale=1'> -->
+    <%= stylesheet_link_tag 'mobile_application', media: 'all' %>
+    <%= csrf_meta_tags %>
+  </head>
+
+  <body>
+    <div data-role='page'>
+      <%= render 'panel' %>
+      <%= render 'header' %>
+
+      <div data-role='content'>
+        <% flash.each do |name, msg| %>
+          <%= content_tag :div, msg, id: "flash_#{name}", class: '' %>
+          <%# flash.discard [if cache on] %>
+        <% end %>
+
+        <%= yield %>
+      </div> 
+
+      <div data-role='footer'>
+        <%= link_to 'desktop', url_for(v:'d'), data: { ajax: false } %>
+      </div>
+    </div>
+  </body>
+
+  <footer>
+    <%= javascript_include_tag 'mobile_application' %>
+    <%= yield :scripts %>
+    
+    <!-- Set for maps buttons manage. -->
+    <% if current_user %>
+      <script>var current_user_id = '#{current_user.id}';</script>
+    <% else %>
+      <script>var current_user_id = null;</script>
+    <% end %>
+
+  </footer>
+</html>

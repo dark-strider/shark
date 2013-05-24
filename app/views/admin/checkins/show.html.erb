@@ -1,0 +1,15 @@
+<p>
+  <b>User:</b>
+  <%= @checkin.user.name %>
+</p>
+<p>
+  <b>Spot for:</b>
+  <%= @checkin.spot.energetic.name %>
+</p>
+<p>
+  <b>Socials:</b>
+  <%= @checkin.socials.first %>
+</p>
+
+<%= link_to 'Edit', [:edit, :admin, @checkin] %> |
+<%= link_to 'Back', [:admin, :checkins] %>

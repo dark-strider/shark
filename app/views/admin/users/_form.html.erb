@@ -1,0 +1,9 @@
+<%= simple_form_for [:admin, @user] do |f| %>
+  <%= image_tag @user.avatar_url(:normal) if @user.avatar? %>
+  <%= f.input :avatar, as: :file %>
+  <%= f.hidden_field :avatar_cache %>
+  <%= f.input :name %>
+  <%= f.input :email %>
+  <%= f.input :role, collection: User::ROLES %>
+  <%= f.button :submit %>
+<% end %>

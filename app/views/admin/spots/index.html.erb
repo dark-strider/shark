@@ -1,0 +1,23 @@
+<h1>Listing spots</h1>
+
+<table>
+  <tr>
+    <th>Energetic</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @spots.each do |spot| %>
+  <tr>
+    <td><%= spot.energetic.name %></td>
+    <td><%= link_to 'Show', [:admin, spot] %></td>
+    <td><%= link_to 'Edit', [:edit, :admin, spot] %></td>
+    <td><%= link_to 'Destroy', [:admin, spot], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New spot', [:new, :admin, :spot] %>

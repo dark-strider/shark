@@ -1,0 +1,17 @@
+<p>
+  <%= image_tag @sticker.avatar_url if @sticker.avatar? %>
+</p>
+<p>
+  <b>Spot:</b>
+  <%= @sticker.spot.energetic.name %>
+</p>
+<p>
+  <b>Seller:</b>
+  <%= @sticker.seller.name %>
+</p><p>
+  <b>Client:</b>
+  <%= @sticker.client.name %>
+</p>
+
+<%= link_to 'Edit', [:edit, :admin, @sticker] %> |
+<%= link_to 'Back', [:admin, :stickers] %>

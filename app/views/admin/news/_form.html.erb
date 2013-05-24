@@ -1,0 +1,7 @@
+<%= simple_form_for [:admin, @news] do |f| %>
+  <%= f.association :energetics, collection: Energetic.all, multiple: true %>
+  <%= f.input :category, collection: News::CATEGORIES %>
+  <%= f.input :title %>
+  <%= f.input :content, as: :text %>
+  <%= f.button :submit %>
+<% end %>

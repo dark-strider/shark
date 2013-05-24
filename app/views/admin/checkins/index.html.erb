@@ -1,0 +1,27 @@
+<h1>Listing checkins</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Spot for</th>
+    <th>Socials</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @checkins.each do |checkin| %>
+  <tr>
+    <td><%= checkin.user.name %></td>
+    <td><%= checkin.spot.energetic.name %></td>
+    <td><%= checkin.socials.first %></td>
+    <td><%= link_to 'Show', [:admin, checkin] %></td>
+    <td><%= link_to 'Edit', [:edit, :admin, checkin] %></td>
+    <td><%= link_to 'Destroy', [:admin, checkin], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New checkin', [:new, :admin, :checkin] %>

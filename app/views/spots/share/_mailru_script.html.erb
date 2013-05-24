@@ -1,0 +1,14 @@
+<script src="http://cdn.connect.mail.ru/js/loader.js" type="text/javascript" charset="UTF-8"></script>
+<script type="text/javascript">
+  mailru.loader.require('api', function() {
+    mailru.connect.init(700298, '7434bfdda96de2e1d7d2bec1ffd0d53c');
+    mailru.events.listen(mailru.plugin.events.liked, function(event){
+      if (event.type == 'ok') {
+        alert('odnoklassniki. post was published.');
+      }
+      if (event.type == 'mm') {
+        alert('mailru. post was published.');
+      }
+    });
+  });
+</script>

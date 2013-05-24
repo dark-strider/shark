@@ -1,0 +1,7 @@
+<%= redactor_lang('ru') %>
+<%= simple_form_for [:admin, @page] do |f| %>
+  <%= f.input :title %>
+  <%= f.input :permalink %>
+  <%= f.input :content, as: :text, input_html: { class: 'redactor' } %>
+  <%= f.button :submit %>
+<% end %>

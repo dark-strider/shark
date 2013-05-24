@@ -1,0 +1,25 @@
+<div data-role='panel' id='panel' data-position='left' data-display='reveal' data-dismissible='true' data-theme='a'>
+  
+  <ul data-role='listview'>
+
+    <li><%= link_to 'Главная', [:root] %></li>
+    <li><%= link_to 'Новости', [:news_index] %></li>
+    <li><%= link_to 'Рейтинг', [:root] %></li>
+    <li><%= link_to 'Напитки', page_path('energetics') %></li>
+    <li><%= link_to 'Акция(Призы)', page_path('promotion') %></li>
+
+    <% if user_signed_in? %>
+      <li><%= link_to 'Профиль', [:root] %></li>
+      <li><%= link_to 'Настройки', [:edit, :user_registration] %></li>
+      <li><%= link_to 'Выход', [:destroy, :user_session], method: 'delete' %></li>
+    <% else %>
+      <li><%= link_to 'Регистрация', [:new, :user_registration] %></li>
+      <li><%= link_to 'Вход', [:new, :user_session] %></li>
+    <% end %>
+
+  </ul>
+  
+  <br>
+  <br>
+  <a href='#' data-rel='close' data-role='button' data-mini='true' data-theme='a' data-icon='delete' data-inline='true'>Close</a>
+</div>

@@ -1,0 +1,21 @@
+<%= simple_form_for [:admin, @spot] do |f| %>
+  <%= f.association :energetic, collection: @energetics %>
+  <%= f.input :status, collection: @status %>
+  <%= f.input :code %>
+  
+  <br>
+  <%= f.simple_fields_for :location do |l| %>
+    <%= l.input :country, collection: @countries.map(&:name), 
+                          input_html: { id: 'country' } %>
+    <%= l.input :city, collection: @cities.map(&:name),
+                       input_html: { id: 'city' } %>
+    <%= l.input :street, input_html: { id: 'street' } %>
+    <%= l.hidden_field :coordinates %>
+  <% end %>
+
+  <br>
+  <%= render 'map' %>
+  <br>
+
+  <%= f.button :submit %>
+<% end %>

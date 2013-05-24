@@ -1,0 +1,7 @@
+<%= simple_form_for Checkin.new, html: { onsubmit:'return validate_code(this)' } do |f| %>
+  <%= f.hidden_field :spot_id, value: @spot.id %>
+  <%= text_field_tag 'qrcode', nil, placeholder: 'QR-код ...' %>
+  <%= f.button :submit, 'Зачекинить' %>
+<% end %>
+
+<%#= link_to 'Зачекинить', checkins_path(Checkin.new, spot: @spot), method: :post, onclick: '' %>

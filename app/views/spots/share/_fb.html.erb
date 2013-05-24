@@ -1,0 +1,39 @@
+<!-- facebook -->
+<button onclick='publishWall(); return false;'>facebook</button>
+<div id="fb-root"></div>
+<script src="http://connect.facebook.net/en_US/all.js" type="text/javascript"></script>
+  
+<script type="text/javascript">
+  FB.init({
+    appId : '460697190630615',
+    status: true,
+    cookie: true,
+    xfbml : true,
+    frictionlessRequests: true
+  });
+
+  var publish = {
+    method: 'feed',
+    message: 'message',
+    name: 'name',
+    caption: 'caption',
+    description: 'description',
+    link: 'http://www.google.com/',
+    picture: 'picture',
+    actions: [
+      { name: 'google', link: 'http://www.google.com/' }
+    ],
+    user_message_prompt: 'user_message_prompt'
+  };
+
+  function callback(response) {
+    if (response && response.post_id) {
+      alert('facebook. post was published.');
+    }
+  }
+
+  function publishWall(){
+    FB.ui(publish, callback);
+  }
+</script>
+<!-- /facebook -->

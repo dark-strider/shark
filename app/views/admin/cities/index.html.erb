@@ -1,0 +1,23 @@
+<h1>Listing cities</h1>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @cities.each do |city| %>
+  <tr>
+    <td><%= city.name %></td>
+    <td><%= link_to 'Show', [:admin, city] %></td>
+    <td><%= link_to 'Edit', [:edit, :admin, city] %></td>
+    <td><%= link_to 'Destroy', [:admin, city], confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New City', [:new, :admin, :city] %>

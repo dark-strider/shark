@@ -1,0 +1,15 @@
+<%= link_to_unless_current 'Главная', [:root] %>
+<%= link_to_unless_current 'Панель', [:admin, :root] %>
+<%= link_to_unless_current 'Новости', [:news_index] %>
+<%= link_to_unless_current 'Рейтинг', [:root] %>
+<%= link_to_unless_current 'Напитки', page_path('energetics') %>
+<%= link_to_unless_current 'Акция(Призы)', page_path('promotion') %>
+
+<% if user_signed_in? %>
+  <%= link_to_unless_current 'Профиль', [:root] %> 
+  <%= link_to 'Настройки', [:edit, :user_registration] %> 
+  <%= link_to 'Выход', [:destroy, :user_session], method: 'delete' %>
+<% else %>
+  <%= link_to 'Регистрация', [:new, :user_registration] %> 
+  <%= link_to 'Вход', [:new, :user_session] %>
+<% end %>
