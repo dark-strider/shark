@@ -10,3 +10,4 @@
 * Полустатические страницы (co статическими ссылками).
 * Фотогалерея события (+fine_uploader+, +carrierwave+, +galleria+).
 * Шаринг (с подтверждением доставки сообщения) в популярные социальные сети: +vkontakte+, +odnoklassniki+, +mail_ru+, +twitter+, +facebook+.
+* http://i47.fastpic.ru/big/2013/0528/d3/bf8f49c2d174e61c5cf45b80ed5110d3.png
